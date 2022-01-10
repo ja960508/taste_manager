@@ -1,4 +1,5 @@
 import { createAction, handleActions } from "redux-actions";
+import Cloudinary from "./cloudinary";
 
 const GET_POST = "post/GET_POST";
 const POST_POST = "post/POST_POST";
@@ -7,6 +8,7 @@ export const getPost = createAction(GET_POST);
 export const postPost = createAction(POST_POST);
 
 const initialState = {
+  cloudinary: new Cloudinary(),
   posts: [
     {
       id: 1,

@@ -7,7 +7,11 @@ const MainContainer = () => {
     posts: posts.posts,
   }));
 
-  return <Main posts={posts} />;
+  const handleClick = (id) => {
+    console.log(id);
+  };
+
+  return <Main posts={posts} handleClick={handleClick} />;
 };
 
 export default MainContainer;

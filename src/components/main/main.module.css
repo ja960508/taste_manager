@@ -1,9 +1,9 @@
 .main {
   background-color: gray;
-  height: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem 0;
 }
 
 .container {
@@ -14,6 +14,8 @@
   margin: 0;
   list-style: none;
   position: relative;
+  display: flex;
+  padding: 0;
 }
 
 .post {
@@ -21,9 +23,28 @@
   flex-direction: column;
   align-items: center;
   float: left;
+  cursor: pointer;
+}
+
+.post:nth-child(even) {
   margin: 0 2rem;
+}
+
+.post:hover {
+  transform: scale(1.025);
+  transition: transform 0.1s ease-in;
 }
 
 .post_img {
   margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 480px) {
+  .post_list {
+    flex-direction: column;
+  }
+  .post:nth-child(even) {
+    margin: 1rem 0;
+  }
 }
