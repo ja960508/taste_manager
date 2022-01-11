@@ -5,7 +5,7 @@ import {
   getAuth,
   signInWithPopup,
 } from "firebase/auth";
-import { getDatabase, set, ref } from "firebase/database";
+import { getDatabase, set, ref, get, child } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -26,12 +26,8 @@ class Firebase {
 
       try {
         const result = await signInWithPopup(auth, googleAuthProvider);
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-
-        console.log(token, user);
 
         return user.uid;
       } catch (e) {
@@ -61,17 +57,39 @@ class Firebase {
     await auth.signOut();
   }
 
-  async write(userId) {
+  async write(userId, data, timestamp) {
     const database = getDatabase(app);
     console.log(userId);
     try {
-      await set(ref(database, `users/${userId}`), {
-        test: "hello",
-      });
+      await set(ref(database, `users/${userId}/posts/${timestamp}`), data);
 
       return 1;
     } catch (e) {
       return e;
+    }
+  }
+
+  async setData(userId) {
+    const db = getDatabase(app);
+    const dbRef = ref(db);
+    const snapshot = await get(child(dbRef, `users/${userId}/posts`));
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      console.log("no data");
+      return {};
+    }
+  }
+
+  async selectData(userId, postId) {
+    const db = getDatabase(app);
+    const dbRef = ref(db);
+    const snapshot = await get(child(dbRef, `users/${userId}/posts`));
+    if (snapshot.exists()) {
+      return snapshot.val()[postId];
+    } else {
+      console.log("no data");
+      return null;
     }
   }
 }

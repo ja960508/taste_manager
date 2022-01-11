@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import Header from "../../components/header/header";
 import { logout } from "../../modules/auth";
 import { useNavigate } from "react-router-dom";
+import { setPost } from "../../modules/posts";
 
 const HeaderContainer = () => {
   const { user, firebase } = useSelector(({ auth }) => ({
@@ -16,6 +17,7 @@ const HeaderContainer = () => {
   const onLogout = () => {
     firebase.logout();
     dispatch(logout());
+    dispatch(setPost({}));
   };
 
   const onWrite = () => {

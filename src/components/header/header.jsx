@@ -3,7 +3,6 @@ import Button from "../commons/button/button";
 import styles from "./header.module.css";
 
 const Header = ({ user, onLogout, onWrite }) => {
-  console.log(user);
   return (
     <header className={styles.header}>
       <h1>Taste Manager</h1>

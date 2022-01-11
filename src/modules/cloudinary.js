@@ -19,9 +19,7 @@ class Cloudinary {
     });
     const text = await result.json();
 
-    console.log(text.url);
-
-    return text;
+    return text.url;
   }
 }
 

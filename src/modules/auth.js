@@ -15,7 +15,6 @@ const initialState = {
 export default handleActions(
   {
     [LOGIN]: (state, { payload: user }) => {
-      console.log(state, user);
       return {
         ...state,
         user: user,

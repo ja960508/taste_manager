@@ -1,43 +1,46 @@
 import { createAction, handleActions } from "redux-actions";
 import Cloudinary from "./cloudinary";
 
-const GET_POST = "post/GET_POST";
-const POST_POST = "post/POST_POST";
+const SET_POST = "post/SET_POST";
+const SET_VIEW = "post/SET_VIEW";
 
-export const getPost = createAction(GET_POST);
-export const postPost = createAction(POST_POST);
+export const setPost = createAction(SET_POST);
+export const setView = createAction(SET_VIEW);
 
 const initialState = {
   cloudinary: new Cloudinary(),
-  posts: [
-    {
-      id: 1,
-      name: "name1",
-      url: "https://via.placeholder.com/360x240",
+  posts: {
+    1641896980: {
+      desc: "제철입니다",
+      title: "제철",
+      url: "http://res.cloudinary.com/dcljapgr4/image/upload/v1641896980/hg0rjz2illewb2are595.jpg",
     },
-    {
-      id: 2,
-      name: "name2",
-      url: "https://via.placeholder.com/360x240",
+    1641897076: {
+      desc: "맛있어!",
+      title: "맛있다",
+      url: "http://res.cloudinary.com/dcljapgr4/image/upload/v1641897076/gihyg3vf1vtgppghriri.jpg",
     },
-    {
-      id: 3,
-      name: "name3",
-      url: "https://via.placeholder.com/360x240",
+    1641897193: {
+      desc: ":)",
+      title: "하",
+      url: "http://res.cloudinary.com/dcljapgr4/image/upload/v1641897193/d6ydee3cvcu4rlxgbzoo.jpg",
     },
-  ],
+  },
+  view: {},
 };
 
 export default handleActions(
   {
-    [GET_POST]: (state) => {
+    [SET_POST]: (state, { payload: posts }) => {
       return {
         ...state,
+        posts: posts,
       };
     },
-    [POST_POST]: (state) => {
+    [SET_VIEW]: (state, { payload: view }) => {
       return {
         ...state,
+        view: view,
       };
     },
   },
