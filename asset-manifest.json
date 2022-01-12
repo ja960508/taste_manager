@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/taste_manager/static/css/main.a430aa14.css",
-    "main.js": "/taste_manager/static/js/main.86892b70.js",
+    "main.css": "/taste_manager/static/css/main.9be89beb.css",
+    "main.js": "/taste_manager/static/js/main.82272817.js",
     "index.html": "/taste_manager/index.html",
-    "main.a430aa14.css.map": "/taste_manager/static/css/main.a430aa14.css.map",
-    "main.86892b70.js.map": "/taste_manager/static/js/main.86892b70.js.map"
+    "main.9be89beb.css.map": "/taste_manager/static/css/main.9be89beb.css.map",
+    "main.82272817.js.map": "/taste_manager/static/js/main.82272817.js.map"
   },
   "entrypoints": [
-    "static/css/main.a430aa14.css",
-    "static/js/main.86892b70.js"
+    "static/css/main.9be89beb.css",
+    "static/js/main.82272817.js"
   ]
 }
