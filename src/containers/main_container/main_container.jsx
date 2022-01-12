@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Main from "../../components/main/main";
 import { setPost } from "../../modules/posts";
+import NotRecommendedContainer from "../not_recommened_container/not_recommended_container";
+import RecommendedContainer from "../recommended_container/recommended_container";
 
 const MainContainer = () => {
   const { posts, firebase, user } = useSelector(({ posts, auth }) => ({
@@ -36,7 +38,15 @@ const MainContainer = () => {
     }
   }, [user, firebase, dispatch]);
 
-  return <Main posts={posts} handleClick={handleClick} />;
+  return (
+    <>
+      <Main posts={posts} handleClick={handleClick} />
+      <div>
+        <RecommendedContainer />
+        <NotRecommendedContainer />
+      </div>
+    </>
+  );
 };
 
 export default MainContainer;

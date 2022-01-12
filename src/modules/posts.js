@@ -25,6 +25,21 @@ const initialState = {
       title: "하",
       url: "http://res.cloudinary.com/dcljapgr4/image/upload/v1641897193/d6ydee3cvcu4rlxgbzoo.jpg",
     },
+    164189690: {
+      desc: "제철입니다",
+      title: "제철",
+      url: "http://res.cloudinary.com/dcljapgr4/image/upload/v1641896980/hg0rjz2illewb2are595.jpg",
+    },
+    164189076: {
+      desc: "맛있어!",
+      title: "맛있다",
+      url: "http://res.cloudinary.com/dcljapgr4/image/upload/v1641897076/gihyg3vf1vtgppghriri.jpg",
+    },
+    164189193: {
+      desc: ":)",
+      title: "하",
+      url: "http://res.cloudinary.com/dcljapgr4/image/upload/v1641897193/d6ydee3cvcu4rlxgbzoo.jpg",
+    },
   },
   view: {},
 };

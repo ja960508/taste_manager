@@ -8,6 +8,8 @@
 
 .container {
   position: relative;
+  width: 1024px;
+  overflow: hidden;
 }
 
 .post_list {
@@ -39,6 +41,19 @@
   margin-bottom: 1rem;
   border-radius: 8px;
   width: 320px;
+}
+
+.next,
+.prev {
+  position: absolute;
+}
+
+.next {
+  right: 3rem;
+}
+
+.prev {
+  left: 3rem;
 }
 
 @media screen and (max-width: 480px) {
