@@ -41,7 +41,11 @@ const MainContainer = () => {
   return (
     <>
       <Main posts={posts} handleClick={handleClick} />
-      <div>
+      <div
+        style={{
+          display: "flex",
+        }}
+      >
         <RecommendedContainer />
         <NotRecommendedContainer />
       </div>
